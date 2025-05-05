@@ -67,13 +67,13 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W             &kp E               &kp R               &lt 1 T                                                                        &kp Y                         &kp U                &lt 5 I                  &kp O                &kp P
-&kp A           &kp S             &kp D               &kp F               &lt 2 G                      &kp LS(LG(S))                      &kp MINUS      &kp H                         &kp J                &kp K                    &kp L                &kp RETURN
-&mt LEFT_ALT Z  &mt LEFT_SHIFT X  &mt LEFT_CONTROL C  &mt LEFT_COMMAND V  &lt 3 B                      &kp COLON                          &kp SEMICOLON  &kp N                         &mt RIGHT_COMMAND M  &mt RIGHT_CONTROL COMMA  &mt RIGHT_SHIFT DOT  &mt RIGHT_ALT SLASH
-&kp LCTRL       &kp LEFT_WIN      &kp LEFT_ALT        &mo 6               &mt LEFT_CONTROL LANGUAGE_2  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &mt RIGHT_COMMAND LANGUAGE_1                                                                     &kp DEL
+&kp Q           &kp W             &kp E               &kp R               &lt 1 T                                                        &kp Y                         &kp U                &lt 5 I                  &kp O                &kp P
+&kp A           &kp S             &kp D               &kp F               &lt 2 G                      &kp LS(LG(S))      &kp MINUS      &kp H                         &kp J                &kp K                    &kp L                &kp RETURN
+&mt LEFT_ALT Z  &mt LEFT_SHIFT X  &mt LEFT_CONTROL C  &mt LEFT_COMMAND V  &lt 3 B                      &kp COLON          &kp SEMICOLON  &kp N                         &mt RIGHT_COMMAND M  &mt RIGHT_CONTROL COMMA  &mt RIGHT_SHIFT DOT  &mt RIGHT_ALT SLASH
+&kp LCTRL       &kp LEFT_WIN      &kp LEFT_ALT        &mo 6               &mt LEFT_CONTROL LANGUAGE_2  &kp SPACE          &kp BACKSPACE  &mt RIGHT_COMMAND LANGUAGE_1                                                                     &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         Number {
