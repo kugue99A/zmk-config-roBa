@@ -69,10 +69,10 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W             &kp E               &kp R               &kp T                                                            &kp Y                     &kp U  &lt 5 I    &kp O    &kp P
-&kp A           &kp S             &kp D               &kp F               &kp G                 &kp LS(LG(S))      &lt 6 RS(K_PLAY_PAUSE)  &kp H                     &kp J  &kp K      &kp L    &kp ENTER
-&mt LEFT_ALT Z  &mt LEFT_SHIFT X  &mt LEFT_CONTROL C  &mt LEFT_COMMAND V  &kp B                 &kp COLON          &kp SEMICOLON           &kp N                     &kp M  &kp COMMA  &kp DOT  &kp SINGLE_QUOTE
-&kp LCTRL       &kp LEFT_WIN      &kp LEFT_ALT        &lt 1 GRAVE         &mt LCTRL LANGUAGE_2  &lt 2 SPACE        &lt 3 BACKSPACE         &mt RIGHT_GUI LANGUAGE_1                             &kp SLASH
+&kp Q           &kp W             &kp E               &kp R               &kp T                                                            &kp Y                     &kp U            &lt 5 I                  &kp O                   &kp P
+&kp A           &kp S             &kp D               &kp F               &kp G                 &kp LS(LG(S))      &lt 6 RS(K_PLAY_PAUSE)  &kp H                     &kp J            &kp K                    &kp L                   &kp ENTER
+&mt LEFT_ALT Z  &mt LEFT_SHIFT X  &mt LEFT_CONTROL C  &mt LEFT_COMMAND V  &kp B                 &kp COLON          &kp SEMICOLON           &kp N                     &mt RIGHT_GUI M  &mt RIGHT_CONTROL COMMA  &mt RIGHT_SHIFT PERIOD  &mt SINGLE_QUOTE SINGLE_QUOTE
+&kp LCTRL       &kp LEFT_WIN      &kp LEFT_ALT        &lt 1 GRAVE         &mt LCTRL LANGUAGE_2  &lt 2 SPACE        &lt 3 BACKSPACE         &mt RIGHT_GUI LANGUAGE_1                                                                    &kp SLASH
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -109,10 +109,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                        &trans                  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans                      &trans                     &trans                 &trans                  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans                      &trans                     &trans                 &trans                  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &to_layer_0 LC(LANGUAGE_2)  &to_layer_0 LC(SPACE)      &to_layer_0 BACKSPACE  &to_layer_0 LANGUAGE_1                                &trans
+&trans  &trans  &trans  &trans  &trans                                                                &trans                  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans                 &trans                 &trans                  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans                 &trans                 &trans                  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &to_layer_0 LANGUAGE_2  &to_layer_0 SPACE      &to_layer_0 BACKSPACE  &to_layer_0 LANGUAGE_1                                &trans
             >;
         };
 
