@@ -96,7 +96,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_TO0_RGUI_LANG1";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
             bindings = <&hold_to0_rgui>, <&to_layer_0>;
         };
 
@@ -105,7 +106,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_TO0_LCTRL_LANG2";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
             bindings = <&hold_to0_lctrl>, <&to_layer_0>;
         };
 
@@ -114,7 +116,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_TO0_NUM_SPACE";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
             bindings = <&hold_to0_layer2>, <&to_layer_0>;
         };
 
@@ -123,7 +126,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_TO0_ARROW_BS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
             bindings = <&hold_to0_layer3>, <&to_layer_0>;
         };
     };
