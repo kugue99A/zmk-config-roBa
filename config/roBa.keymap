@@ -50,6 +50,20 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        to_layer_0_meta: to_layer_0_mt {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to2 &mt RIGHT_META MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0_MT";
+        };
+
+        to_layer_0_arrow_layer: to_layer_0_lang2 {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to2 &lt 3 MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0_LANG2";
+        };
     };
 
     behaviors {
@@ -108,10 +122,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                &trans                  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans                  &trans                 &trans                 &trans                  &mkp MB1  &to 5   &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans                 &trans                 &trans                  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &to_layer_0 LANGUAGE_2  &to_layer_0 SPACE      &to_layer_0 BACKSPACE  &to_layer_0 LANGUAGE_1                              &trans
+&trans  &trans  &trans  &trans  &trans                                                                            &trans                       &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans                 &trans                             &trans                       &mkp MB1  &to 5   &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans                 &trans                             &trans                       &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &to_layer_0 LANGUAGE_2  &to_layer_0 SPACE      &to_layer_0_arrow_layer BACKSPACE  &to_layer_0_meta LANGUAGE_2                              &trans
             >;
         };
 
