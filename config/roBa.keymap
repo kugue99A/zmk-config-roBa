@@ -44,6 +44,7 @@
     };
 
     macros {
+        // タップ用: layer0に戻る + キー送信
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -51,32 +52,32 @@
             label = "TO_LAYER_0";
         };
 
-        to_layer_0_meta: to_layer_0_mt {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to2 &mt RIGHT_META MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0_MT";
+        // ホールド用: layer0に戻る + RIGHT_GUI押し続ける
+        hold_to0_rgui: hold_to0_rgui {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&macro_press &kp RIGHT_GUI>, <&macro_pause_for_release>, <&macro_release &kp RIGHT_GUI>;
         };
 
-        to_layer_0_arrow_layer: to_layer_0_lang2 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to2 &lt 3 MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0_LANG2";
+        // ホールド用: layer0に戻る + LEFT_CONTROL押し続ける
+        hold_to0_lctrl: hold_to0_lctrl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&macro_press &kp LEFT_CONTROL>, <&macro_pause_for_release>, <&macro_release &kp LEFT_CONTROL>;
         };
 
-        to_layer_0_num: to_layer_0_num {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to2 &lt 2 MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0_NUM";
+        // ホールド用: layer0に戻る + layer2(NUM)
+        hold_to0_layer2: hold_to0_layer2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &tog 2>, <&macro_pause_for_release>, <&tog 2>;
         };
 
-        to_layer_0_control: to_layer_0_control {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to2 &mt LEFT_CONTROL MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0_CONTROL";
+        // ホールド用: layer0に戻る + layer3(ARROW)
+        hold_to0_layer3: hold_to0_layer3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &tog 3>, <&macro_pause_for_release>, <&tog 3>;
         };
     };
 
@@ -88,6 +89,42 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        // layer0に戻る + tap=LANGUAGE_1, hold=RIGHT_GUI
+        ht_to0_rgui_lang1: ht_to0_rgui_lang1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TO0_RGUI_LANG1";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&hold_to0_rgui>, <&to_layer_0>;
+        };
+
+        // layer0に戻る + tap=LANGUAGE_2, hold=LEFT_CONTROL
+        ht_to0_lctrl_lang2: ht_to0_lctrl_lang2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TO0_LCTRL_LANG2";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&hold_to0_lctrl>, <&to_layer_0>;
+        };
+
+        // layer0に戻る + tap=SPACE, hold=layer2(NUM)
+        ht_to0_num_space: ht_to0_num_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TO0_NUM_SPACE";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&hold_to0_layer2>, <&to_layer_0>;
+        };
+
+        // layer0に戻る + tap=BACKSPACE, hold=layer3(ARROW)
+        ht_to0_arrow_bs: ht_to0_arrow_bs {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_TO0_ARROW_BS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&hold_to0_layer3>, <&to_layer_0>;
         };
     };
 
@@ -136,10 +173,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mo 5     &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                                   &trans                        &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans               &trans                        &mkp MB1  &mo 5     &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans               &trans                        &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &ht_to0_lctrl_lang2 0 LANGUAGE_2  &ht_to0_num_space 0 SPACE      &ht_to0_arrow_bs 0 BACKSPACE  &ht_to0_rgui_lang1 0 LANGUAGE_1                    &trans
             >;
         };
 
